@@ -148,6 +148,21 @@ blueimp.Gallery document.getElementById("links").getElementsByTagName("a"),
   carousel: true
 ```
 
+If you are using Turbolink, add event triggers as follows:
+```html
+<script>
+$(document).on('DOMContentLoaded page:change', function() {
+  blueimp.Gallery(
+    document.getElementById('links').getElementsByTagName('a'),
+    {
+      container: '#blueimp-gallery-carousel',
+      carousel: true
+    }
+  );
+});
+</script>
+```
+
 ## More Features
 
 blueimp Gallery has a lot more features and options as adding control keys, fullscreen, slide interval, video support (youtube and vimeo) etc. The complete documentation is on the [blueimp Gallery site](https://github.com/blueimp/Gallery).
