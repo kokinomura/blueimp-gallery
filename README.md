@@ -7,12 +7,17 @@ blueimp Gallery is an image and video gallery featuring carousel and lightbox ga
 
 * Official Website: http://blueimp.github.io/Gallery/
 
+## About this fork
+This fork is updated for Rails 4. Main changes are:
+- Rename CSS files to SCSS
+- Replace url() with image-url()
+- Add an example code in ReadMe to use this with Turbolinks, which is bundled with Rails 4 by default
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'blueimp-gallery'
+    gem 'blueimp-gallery', git: 'https://github.com/kokinomura/blueimp-gallery.git', tag: 'v2.12.0.1'
 
 And then execute:
 
@@ -146,6 +151,21 @@ or CoffeeScript if you want to add the script as an asset:
 blueimp.Gallery document.getElementById("links").getElementsByTagName("a"),
   container: "#blueimp-gallery-carousel"
   carousel: true
+```
+
+If you are using Turbolinks, add this Javascript:
+```html
+<script>
+$(document).on('DOMContentLoaded page:change', function() {
+  blueimp.Gallery(
+    document.getElementById('links').getElementsByTagName('a'),
+    {
+      container: '#blueimp-gallery-carousel',
+      carousel: true
+    }
+  );
+});
+</script>
 ```
 
 ## More Features
